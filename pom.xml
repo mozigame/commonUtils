@@ -7,6 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
+  <!--这里要保证最小的依赖性,最好只用java内置-->
   <name>lottery-common-utils</name>
   <url>http://maven.apache.org</url>
 
@@ -22,4 +23,20 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <uniqueVersion>true</uniqueVersion>
+      <name>Internal Release Repository</name>
+      <url>http://maven.blr58589.com/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>releases</id>
+      <uniqueVersion>true</uniqueVersion>
+      <name>Internal Snapshot Repository</name>
+      <url>http://maven.blr58589.com/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>

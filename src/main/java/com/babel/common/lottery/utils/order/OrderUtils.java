@@ -1,4 +1,4 @@
-package com.babel.common.utils.order;
+package com.babel.common.lottery.utils.order;
 
 /**
  * created by roachjiang 2017/9/25
