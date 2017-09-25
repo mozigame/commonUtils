@@ -16,6 +16,7 @@ public class OrderUtils {
             for (int validLen : VALID_ORDER_LEN) {
                 if (validLen == len) {
                     match = true;
+                    break;
                 }
             }
         }
