@@ -1,7 +1,5 @@
 package com.babel.common.utils.excel;
 
-import com.alibaba.druid.support.logging.Log;
-import com.alibaba.druid.support.logging.LogFactory;
 import com.babel.common.utils.time.LocalDateTimeUtil;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.poi.ss.usermodel.Cell;
@@ -19,6 +17,8 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URLEncoder;
 import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * created by roachjiang 2017/9/26
@@ -28,7 +28,7 @@ public class ExcelExportUtil {
     /**
      *
      */
-    private static final Log logger = LogFactory.getLog(ExcelExportUtil.class);
+    private static final Logger logger = LoggerFactory.getLogger(ExcelExportUtil.class);
 
 
     public static String formatFileName(String head) {
