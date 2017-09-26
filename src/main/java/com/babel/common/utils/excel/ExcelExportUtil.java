@@ -2,6 +2,7 @@ package com.babel.common.utils.excel;
 
 import com.alibaba.druid.support.logging.Log;
 import com.alibaba.druid.support.logging.LogFactory;
+import com.babel.common.utils.time.LocalDateTimeUtil;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -11,9 +12,12 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.net.URLEncoder;
 import java.util.*;
 
 /**
@@ -25,6 +29,45 @@ public class ExcelExportUtil {
      *
      */
     private static final Log logger = LogFactory.getLog(ExcelExportUtil.class);
+
+
+    public static String formatFileName(String head) {
+        StringBuilder filename = new StringBuilder();
+        filename.append(LocalDateTimeUtil.toAmerica(System.currentTimeMillis(), LocalDateTimeUtil.YYYYMMDD));
+        filename.append("(");
+        filename.append(head);
+        filename.append(")");
+        filename.append(".xlsx");
+        return filename.toString();
+    }
+
+
+    public static void download(HttpServletResponse response, List list, String filename) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        ServletOutputStream outputStream = null;
+        try {
+            byte[] bytes = generatorExportBytes(list, filename);
+            if (bytes != null && bytes.length > 0) {
+                String contnetDisposition = "attachment;filename=";
+                if (filename != null) {
+                    String fileNameUTF8 = URLEncoder.encode(filename, "utf-8");
+                    ;
+                    contnetDisposition += fileNameUTF8;
+                    response.setHeader("Location", fileNameUTF8);
+                }
+                response.setHeader("Content-Disposition", contnetDisposition);
+                outputStream = response.getOutputStream();
+
+                outputStream.write(bytes);
+
+            }
+        } finally {
+            if (outputStream != null) {
+                outputStream.flush();
+                outputStream.close();
+            }
+        }
+    }
 
 
     /**
@@ -55,7 +98,8 @@ public class ExcelExportUtil {
         }
     }
 
-    private static byte[] generatorExportBytes(List list, XSSFWorkbook workbook) throws IOException, IllegalAccessException {
+    private static byte[] generatorExportBytes(List list, XSSFWorkbook workbook) throws
+            IOException, IllegalAccessException {
         //创建工作表，可指定工作表名称
         Sheet sheet = workbook.createSheet();
         //设置居中
@@ -75,7 +119,7 @@ public class ExcelExportUtil {
                     Cell cell = row.createCell(excelExportField.colNum());
                     cell.setCellType(XSSFCell.CELL_TYPE_STRING);
                     Object valueOb = getValue(object, field);
-                    if (valueOb!=null){
+                    if (valueOb != null) {
                         cell.setCellValue(String.valueOf(valueOb));
                     }
 
