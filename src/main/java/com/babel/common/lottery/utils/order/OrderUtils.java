@@ -22,4 +22,23 @@ public class OrderUtils {
         }
         return match;
     }
+
+
+    public static String getPcodeString(Long pcode) {
+        if (pcode==null){
+            return null;
+        }
+        //用数字不用处理长度
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(pcode/1000L);
+        stringBuilder.append("-");
+        long smallCode  = pcode%1000L;
+        if (smallCode<10){
+            stringBuilder.append("00");
+        }else if (smallCode<100){
+            stringBuilder.append("0");
+        }
+        stringBuilder.append(smallCode);
+        return stringBuilder.toString();
+    }
 }
