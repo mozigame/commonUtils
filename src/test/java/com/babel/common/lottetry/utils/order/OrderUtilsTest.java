@@ -37,5 +37,6 @@ public class OrderUtilsTest {
             Long pcode = 20170507112L;
             System.out.println(OrderUtils.getPcodeString(pcode));
         }
+
     }
 }

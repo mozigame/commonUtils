@@ -7,7 +7,7 @@ public class OrderUtils {
 
     //http://wiki.blr58589.com/pages/viewpage.action?pageId=2917602
     //订单规则
-    private static final int[] VALID_ORDER_LEN = new int[]{20, 21};
+    private static final int[] VALID_ORDER_LEN = new int[]{23};
 
     public static boolean checkOrderId(String orderId) {
         boolean match = false;

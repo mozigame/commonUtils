@@ -6,9 +6,17 @@ package com.babel.common.utils.string;
 public class StringUtil {
 
 
+    /**
+     *
+     */
     public static final String NO_DATA_HINT = "-";
 
 
+    /**
+     *
+     * @param msg
+     * @return
+     */
     public static String joinMsg(Object ...msg){
         if (msg==null){
             return "";
