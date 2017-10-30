@@ -119,6 +119,18 @@ public class DateUtils {
 
         return Integer.parseInt(String.valueOf(betweenDays));
     }
+    
+    
+    public  static int  caculateDay4pk10(Date bdate){
+    	Date initDate=DateUtils.parse("20171030");
+    	try {
+			return daysBetween(initDate,bdate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
+    }
 
     /**
      * 字符串的日期格式的计算
@@ -451,6 +463,9 @@ public class DateUtils {
       }
       String a="20171013 100000";
       System.out.println(getDateTime(a));
+      
+      System.out.println(new Date());
+      System.out.println(new Date(new Date().getTime()+120*1000));
     }
 
 }
