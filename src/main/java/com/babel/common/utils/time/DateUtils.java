@@ -21,7 +21,7 @@ public class DateUtils {
     private static final String DATE_REG = "[0-9]{4}-[0-9]{2}-[0-9]{2}";
     private static final String DATE_FORMAT_DEFAULT_TIME = "yyyyMMdd";
     private static final String DATE_FORMAT_DEFAULT_MONTH = "yyyyMM";
-    private static final String DATE_FORMAT_TIME = "yyyyMMdd HHmmss";
+    private static final String DATE_FORMAT_TIME = "yyyyMMdd HH:mm:ss";
 
     public static boolean validate(String timeString) {
         // TODO Auto-generated method stub

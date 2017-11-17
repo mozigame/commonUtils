@@ -4,8 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum ErrorCodeEnum {
-	PRIZE_DELAY(1, "未开奖"), PRIZE_BEFORE(2, "官方提前开奖"), NORMANAL(0, "无异常");
+	PRIZE_DELAY(1, "未开奖"), PRIZE_BEFORE(2, "官方提前开奖"), NORMANAL(0, "无异常"),CANCEL(3, "无异常");
 
+	
+	/*
+	0 未开奖
+	 1 已开奖
+	 2 提前开奖
+	 3 已撤单
+	 */
 	ErrorCodeEnum(int status, String statusName) {
 		this.status = status;
 		this.statusName = statusName;
