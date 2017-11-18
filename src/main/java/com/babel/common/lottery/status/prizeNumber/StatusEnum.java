@@ -8,7 +8,7 @@ import com.babel.common.lottery.status.errorlog.ErrorCodeEnum;
 public enum StatusEnum {
 
 	
-PRIZE_DELAY(1, "未开奖"), PRIZE_BEFORE(2, "官方提前开奖"), NORMANAL(0, "无异常"),CANCEL(3, "已撤单");
+PRIZE_DELAY(1, "未开奖"), PRIZE_BEFORE(2, "官方提前开奖"), NORMANAL(0, "无异常"),CANCEL(3, "已撤单"),NOT_THE_SAME(4,"结果不一致");
 
 	
 	/*
