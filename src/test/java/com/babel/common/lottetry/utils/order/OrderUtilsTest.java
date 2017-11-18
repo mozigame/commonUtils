@@ -1,17 +1,10 @@
 package com.babel.common.lottetry.utils.order;
 
-import com.babel.common.lottery.utils.order.OrderUtils;
-import com.babel.common.utils.excel.ExcelExportUtil;
-import com.babel.common.utils.excel.ExcelVO;
-import com.babel.common.utils.excel.ExcelVO2;
+import java.io.IOException;
+
 import org.junit.Test;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import com.babel.common.lottery.utils.order.OrderUtils;
 
 /**
  * created by roachjiang 2017/9/27
@@ -36,6 +29,44 @@ public class OrderUtilsTest {
         {
             Long pcode = 20170507112L;
             System.out.println(OrderUtils.getPcodeString(pcode));
+        }
+        System.out.println("-----4code");
+        {
+            Long pcode = 201705071121L;
+            System.out.println(OrderUtils.getPcodeString(pcode));
+        }
+        
+        {
+            Long pcode = 201705070001L;
+            System.out.println(OrderUtils.getPcodeString(pcode));
+        }
+        {
+            Long pcode = 201705070011L;
+            System.out.println(OrderUtils.getPcodeString(pcode));
+        }
+        {
+            Long pcode = 201705070101L;
+            System.out.println(OrderUtils.getPcodeString(pcode));
+        }
+        
+        System.out.println("-----4code2");
+        
+        {
+            Long pcode = 201705071121L;
+            System.out.println(OrderUtils.getPcodeString4(pcode));
+        }
+        
+        {
+            Long pcode = 201705070001L;
+            System.out.println(OrderUtils.getPcodeString4(pcode));
+        }
+        {
+            Long pcode = 201705070011L;
+            System.out.println(OrderUtils.getPcodeString4(pcode));
+        }
+        {
+            Long pcode = 201705070101L;
+            System.out.println(OrderUtils.getPcodeString4(pcode));
         }
 
     }
