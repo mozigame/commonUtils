@@ -11,10 +11,22 @@ public class TimeUtils {
 	 
 	 private static final String DATE_FORMAT_TIME = "yyyyMMdd HH:mm:ss";
 	 
+	 private static final String DATE_FORMAT_Millis = "yyyyMMddHHmmss";
+	 
 	 
 	 
 	 public static String getCurrentTime() {
 	        return formatDate(new Date());
+	    }
+	 public static String getCurrentMillis() {
+		 SimpleDateFormat dateformat = new SimpleDateFormat(DATE_FORMAT_Millis);
+		 return dateformat.format(new Date());
+		 
+	 }
+	 public static String getCurrentMillis(Long currentTime) {
+		 SimpleDateFormat dateformat = new SimpleDateFormat(DATE_FORMAT_Millis);
+	      return dateformat.format(new Date(currentTime));
+	      
 	    }
 	 
 	 public static String formatDate(Date date) {
