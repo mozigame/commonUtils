@@ -70,4 +70,16 @@ public class OrderUtilsTest {
         }
 
     }
+    
+    @Test
+    public void testOrderId(){
+    	String orderId="21362017112906993f4i0ekt";
+    	System.out.println("---"+orderId.length());
+    	boolean isOrder=OrderUtils.checkOrderId(orderId);
+    	System.out.println(orderId+" "+isOrder);
+    	
+    	orderId="2102201711280524c7t0bhs";
+    	isOrder=OrderUtils.checkOrderId(orderId);
+    	System.out.println(orderId+" "+isOrder);
+    }
 }

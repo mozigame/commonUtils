@@ -16,7 +16,7 @@ public class OrderUtils {
     public static boolean checkOrderId(String orderId) {
         boolean match = false;
         if (orderId != null) {
-        	if(orderId.length()==VALID_ORDER4_LEN.length){
+        	if(orderId.length()==VALID_ORDER4_LEN[0]){
         		return checkOrderId4(orderId);
         	}
             int len = orderId.length();
