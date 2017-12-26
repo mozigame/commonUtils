@@ -1,5 +1,7 @@
 package com.babel.common.lottery.utils.order;
 
+import java.util.Calendar;
+
 /**
  * created by roachjiang 2017/9/25
  */
@@ -135,6 +137,21 @@ public class OrderUtils {
     		return pcode/10000;
     	}
     	return pcode/1000;
+    }
+    
+    /**
+     * 获取当前周数
+     * @param pcode
+     * @return
+     */
+    public static int getYearWeek(Long time){
+    	if(time==null){
+    		return 0;
+    	}
+    	Calendar calendar = Calendar.getInstance();
+    	calendar.setFirstDayOfWeek(Calendar.MONDAY); 
+    	calendar.setTimeInMillis(time);
+    	return calendar.get(Calendar.WEEK_OF_YEAR);
     }
     
     /**
