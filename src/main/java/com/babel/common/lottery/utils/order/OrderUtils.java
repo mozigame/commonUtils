@@ -141,17 +141,19 @@ public class OrderUtils {
     
     /**
      * 获取当前周数
-     * @param pcode
-     * @return
+     * @param time
+     * @return year+week, exp:201801
      */
-    public static int getYearWeek(Long time){
+    public static Integer getYearPWeek(Long time){
     	if(time==null){
     		return 0;
     	}
     	Calendar calendar = Calendar.getInstance();
     	calendar.setFirstDayOfWeek(Calendar.MONDAY); 
     	calendar.setTimeInMillis(time);
-    	return calendar.get(Calendar.WEEK_OF_YEAR);
+    	Integer week= calendar.get(Calendar.WEEK_OF_YEAR);
+    	Integer year=calendar.get(Calendar.YEAR);
+    	return year*100+week;
     }
     
     /**
