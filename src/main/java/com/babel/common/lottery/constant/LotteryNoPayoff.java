@@ -16,7 +16,7 @@ public class LotteryNoPayoff {
         if(lotteryId==null){
             return list;
         }
-        if(lotteryId==10){
+        if(lotteryId==10||lotteryId==9){
             return PLAYS_SIX;
         }
         else if(lotteryId==1||lotteryId==2){
