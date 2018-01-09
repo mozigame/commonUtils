@@ -170,6 +170,22 @@ public class OrderUtils {
     }
     
     /**
+     * 当前时间在周对应的天数
+     * @param time
+     * @return year+week, exp:201801
+     */
+    public static Integer getWeekDay(Long time){
+    	if(time==null){
+    		return 0;
+    	}
+    	Calendar calendar = Calendar.getInstance();
+    	calendar.setFirstDayOfWeek(Calendar.MONDAY); 
+    	calendar.setTimeInMillis(time);
+    	Integer weekDay= calendar.get(Calendar.DAY_OF_WEEK);
+    	return weekDay;
+    }
+    
+    /**
      * 从期号中获取期数
      * @param pcode
      * @return

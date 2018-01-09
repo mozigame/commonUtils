@@ -91,4 +91,10 @@ public class OrderUtilsTest {
     	
     	System.out.println("---lastWeek="+OrderUtils.addYearPWeek(time, -2));
     }
+    
+    @Test
+    public void testWeekday(){
+    	Integer weekDay=OrderUtils.getWeekDay(System.currentTimeMillis());
+    	System.out.println("----weekDay="+weekDay);
+    }
 }
