@@ -82,4 +82,13 @@ public class OrderUtilsTest {
     	isOrder=OrderUtils.checkOrderId(orderId);
     	System.out.println(orderId+" "+isOrder);
     }
+    
+    @Test
+    public void testYearPweek(){
+    	Long time=System.currentTimeMillis();
+    	System.out.println("---currentWeek="+OrderUtils.getYearPWeek(time));
+    	
+    	
+    	System.out.println("---lastWeek="+OrderUtils.addYearPWeek(time, -2));
+    }
 }

@@ -148,6 +148,19 @@ public class OrderUtils {
     	if(time==null){
     		return 0;
     	}
+    	return addYearPWeek(time, 0);
+    }
+    
+    /**
+     * 年份周数加减
+     * @param time
+     * @return year+week, exp:201801
+     */
+    public static Integer addYearPWeek(Long time, Integer weekCount){
+    	if(time==null){
+    		return 0;
+    	}
+    	time=time+weekCount*7*24*3600*1000;
     	Calendar calendar = Calendar.getInstance();
     	calendar.setFirstDayOfWeek(Calendar.MONDAY); 
     	calendar.setTimeInMillis(time);
