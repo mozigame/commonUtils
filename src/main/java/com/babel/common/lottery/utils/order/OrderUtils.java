@@ -140,7 +140,7 @@ public class OrderUtils {
     }
     
     /**
-     * 获取当前周数
+     * 获取当前周数，仅用于查询，六合彩pweek最好从prizeNumber的pdate中取
      * @param time
      * @deprecated
      * @return year+week, exp:201801
