@@ -21,4 +21,21 @@ public class DataUtil {
     public static Integer divide(Integer value) {
         return value == null ? 0 : value / 100;
     }
+
+    /**
+     * 数据转换 以基数乘以100
+     * @param value
+     * @return
+     */
+    public static Long multiplyLong(Long value) {
+        return value == null ? 0 : value * 100;
+    }
+    /**
+     * 数据转换 以基数除以100
+     * @param value
+     * @return
+     */
+    public static Long divideLong(Long value) {
+        return value == null ? 0 : value / 100;
+    }
 }
