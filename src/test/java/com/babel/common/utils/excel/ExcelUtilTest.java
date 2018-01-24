@@ -32,7 +32,7 @@ public class ExcelUtilTest {
             }
             String fileName = "testExcel.xlsx";
             byte[] bytes = ExcelExportUtil.generatorExportBytes(test,fileName);
-            FileOutputStream fileOutputStream = new FileOutputStream("F:/" + fileName);
+            FileOutputStream fileOutputStream = new FileOutputStream("D:/" + fileName);
             fileOutputStream.write(bytes);
             fileOutputStream.flush();
         }
@@ -52,7 +52,7 @@ public class ExcelUtilTest {
             }
             String fileName = "testExcel2.xlsx";
             byte[] bytes = ExcelExportUtil.generatorExportBytes(test,fileName);
-            FileOutputStream fileOutputStream = new FileOutputStream("F:/" + fileName);
+            FileOutputStream fileOutputStream = new FileOutputStream("D:/" + fileName);
             fileOutputStream.write(bytes);
             fileOutputStream.flush();
         }
