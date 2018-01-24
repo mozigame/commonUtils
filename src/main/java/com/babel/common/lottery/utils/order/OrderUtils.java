@@ -140,8 +140,9 @@ public class OrderUtils {
     }
     
     /**
-     * 获取当前周数
+     * 获取当前周数，仅用于查询，六合彩pweek最好从prizeNumber的pdate中取
      * @param time
+     * @deprecated
      * @return year+week, exp:201801
      */
     public static Integer getYearPWeek(Long time){
@@ -155,6 +156,7 @@ public class OrderUtils {
      * 年份周数加减
      * @param time
      * @return year+week, exp:201801
+     * 
      */
     public static Integer addYearPWeek(Long time, Integer weekCount){
     	if(time==null){
@@ -173,6 +175,7 @@ public class OrderUtils {
      * 当前时间在周对应的天数
      * @param time
      * @return year+week, exp:201801
+     * 
      */
     public static Integer getWeekDay(Long time){
     	if(time==null){
