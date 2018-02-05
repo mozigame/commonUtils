@@ -155,6 +155,10 @@ public class DateUtils {
         return diffDay(date, day);
     }
 
+    
+    public static Date getFutureDate(int day){
+    	return diffDay(new Date(), -day);
+    }
     private static Date getFirstDayForNextMonth(Date date) {
         Date tmp = date;
         tmp.setMonth(date.getMonth() + 1);
@@ -414,6 +418,10 @@ public class DateUtils {
 		
     	 return Long.parseLong(formatDate(diffDay(new Date(), -1)));
 	}
+    
+    public static Long getFutureDay(int day){
+    	 return Long.parseLong(formatDate(diffDay(new Date(), -day)));
+    }
     
     public static Date getTomorrowDate(){
     	return diffDay(new Date(), -1);
